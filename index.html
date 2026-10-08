@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWise - Smart Weather & Travel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            🌤️ Weather<span>Wise</span>
+        </div>
+
+        <nav id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#weather">Weather</a>
+            <a href="#travel">Travel</a>
+            <a href="#favorites">Favorites</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="themeBtn">🌙</button>
+            <button id="menuBtn" class="menu-btn">☰</button>
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                SMART TRAVEL PLANNER
+            </span>
+
+            <h1>
+                Travel Smarter.<br>
+                <span>Explore Better.</span>
+            </h1>
+
+            <p>
+                Get weather insights and discover the best
+                destinations for your next adventure.
+            </p>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Enter city name..."
+                >
+
+                <button id="searchBtn">
+                    🔍 Search
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+            🌍
+        </div>
+
+    </section>
+
+
+    <!-- WEATHER -->
+    <section class="section" id="weather">
+
+        <div class="section-title">
+
+            <div>
+                <span class="eyebrow">
+                    LIVE WEATHER
+                </span>
+
+                <h2>Weather Dashboard</h2>
+            </div>
+
+            <span id="updatedText">
+                Updated just now
+            </span>
+
+        </div>
+
+
+        <div class="weather-dashboard">
+
+            <!-- CURRENT WEATHER -->
+
+            <div class="current-weather">
+
+                <div class="location">
+                    <span>📍</span>
+
+                    <div>
+                        <h3 id="cityName">
+                            Chennai, India
+                        </h3>
+
+                        <p id="weatherDate">
+                            Tuesday, October 7
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="temperature-area">
+
+                    <div class="weather-icon" id="weatherIcon">
+                        ☀️
+                    </div>
+
+                    <div>
+                        <strong id="temperature">
+                            31°
+                        </strong>
+
+                        <p id="condition">
+                            Sunny
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="weather-description">
+                    Perfect weather for exploring the city.
+                </div>
+
+            </div>
+
+
+            <!-- WEATHER DETAILS -->
+
+            <div class="weather-details">
+
+                <div class="detail-card">
+                    <span>💧</span>
+                    <p>Humidity</p>
+                    <strong id="humidity">
+                        68%
+                    </strong>
+                </div>
+
+                <div class="detail-card">
+                    <span>💨</span>
+                    <p>Wind</p>
+                    <strong id="wind">
+                        14 km/h
+                    </strong>
+                </div>
+
+                <div class="detail-card">
+                    <span>👁️</span>
+                    <p>Visibility</p>
+                    <strong id="visibility">
+                        10 km
+                    </strong>
+                </div>
+
+                <div class="detail-card">
+                    <span>🌡️</span>
+                    <p>Feels Like</p>
+                    <strong id="feelsLike">
+                        34°
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORECAST -->
+
+        <div class="forecast">
+
+            <h3>5-Day Forecast</h3>
+
+            <div class="forecast-grid" id="forecastGrid">
+
+                <!-- JavaScript fills this -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRAVEL SCORE -->
+
+    <section class="travel-score">
+
+        <div>
+
+            <span class="eyebrow">
+                SMART INSIGHT
+            </span>
+
+            <h2 id="travelMessage">
+                Today is a great day to explore! 🌴
+            </h2>
+
+            <p>
+                Our travel score combines weather conditions,
+                temperature and comfort to help you plan better.
+            </p>
+
+        </div>
+
+        <div class="score-circle">
+
+            <strong id="travelScore">
+                92
+            </strong>
+
+            <span>/100</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- DESTINATIONS -->
+
+    <section class="section" id="travel">
+
+        <div class="section-title">
+
+            <div>
+                <span class="eyebrow">
+                    TRAVEL IDEAS
+                </span>
+
+                <h2>Explore Destinations</h2>
+            </div>
+
+        </div>
+
+
+        <div class="destination-grid">
+
+            <!-- DESTINATION 1 -->
+
+            <article class="destination-card">
+
+                <div class="destination-image beach">
+                    🏝️
+                </div>
+
+                <div class="destination-content">
+
+                    <div class="destination-top">
+
+                        <div>
+                            <h3>Goa</h3>
+                            <p>India</p>
+                        </div>
+
+                        <button
+                            class="favorite-btn"
+                            onclick="toggleFavorite(this, 'Goa')">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="destination-info">
+
+                        <span>🌡️ 29°C</span>
+                        <span>☀️ Sunny</span>
+
+                    </div>
+
+                    <div class="destination-bottom">
+
+                        <span>
+                            ⭐ 9.2 Travel Score
+                        </span>
+
+                        <button
+                            onclick="planTrip('Goa')">
+                            Plan Trip
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- DESTINATION 2 -->
+
+            <article class="destination-card">
+
+                <div class="destination-image mountains">
+                    🏔️
+                </div>
+
+                <div class="destination-content">
+
+                    <div class="destination-top">
+
+                        <div>
+                            <h3>Manali</h3>
+                            <p>India</p>
+                        </div>
+
+                        <button
+                            class="favorite-btn"
+                            onclick="toggleFavorite(this, 'Manali')">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="destination-info">
+
+                        <span>🌡️ 18°C</span>
+                        <span>⛅ Cloudy</span>
+
+                    </div>
+
+                    <div class="destination-bottom">
+
+                        <span>
+                            ⭐ 8.8 Travel Score
+                        </span>
+
+                        <button
+                            onclick="planTrip('Manali')">
+                            Plan Trip
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- DESTINATION 3 -->
+
+            <article class="destination-card">
+
+                <div class="destination-image city">
+                    🏙️
+                </div>
+
+                <div class="destination-content">
+
+                    <div class="destination-top">
+
+                        <div>
+                            <h3>Singapore</h3>
+                            <p>Singapore</p>
+                        </div>
+
+                        <button
+                            class="favorite-btn"
+                            onclick="toggleFavorite(this, 'Singapore')">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="destination-info">
+
+                        <span>🌡️ 30°C</span>
+                        <span>🌦️ Partly Cloudy</span>
+
+                    </div>
+
+                    <div class="destination-bottom">
+
+                        <span>
+                            ⭐ 9.0 Travel Score
+                        </span>
+
+                        <button
+                            onclick="planTrip('Singapore')">
+                            Plan Trip
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- DESTINATION 4 -->
+
+            <article class="destination-card">
+
+                <div class="destination-image europe">
+                    🏰
+                </div>
+
+                <div class="destination-content">
+
+                    <div class="destination-top">
+
+                        <div>
+                            <h3>Paris</h3>
+                            <p>France</p>
+                        </div>
+
+                        <button
+                            class="favorite-btn"
+                            onclick="toggleFavorite(this, 'Paris')">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="destination-info">
+
+                        <span>🌡️ 21°C</span>
+                        <span>☀️ Clear</span>
+
+                    </div>
+
+                    <div class="destination-bottom">
+
+                        <span>
+                            ⭐ 9.5 Travel Score
+                        </span>
+
+                        <button
+                            onclick="planTrip('Paris')">
+                            Plan Trip
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAVORITES -->
+
+    <section
+        class="section favorites"
+        id="favorites">
+
+        <div class="section-title">
+
+            <div>
+                <span class="eyebrow">
+                    YOUR SAVED PLACES
+                </span>
+
+                <h2>Favorite Destinations ❤️</h2>
+            </div>
+
+        </div>
+
+        <div
+            id="favoritesList"
+            class="favorites-list">
+
+            <p class="empty-message">
+                No favorite destinations yet.
+                Click ♡ on a destination to save it.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRIP PLANNER -->
+
+    <section class="planner">
+
+        <div class="planner-content">
+
+            <span class="eyebrow">
+                TRIP PLANNER
+            </span>
+
+            <h2>
+                Ready for your next adventure?
+            </h2>
+
+            <p>
+                Choose a destination and start planning
+                your perfect trip.
+            </p>
+
+            <button onclick="startPlanning()">
+                ✈️ Start Planning
+            </button>
+
+        </div>
+
+        <div class="planner-icon">
+            🧳
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🌤️ WeatherWise
+        </div>
+
+        <p>
+            Smart weather insights for smarter journeys.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#weather">Weather</a>
+            <a href="#travel">Travel</a>
+            <a href="#favorites">Favorites</a>
+
+        </div>
+
+        <small>
+            © 2026 WeatherWise. All Rights Reserved.
+        </small>
+
+    </footer>
+
+
+    <!-- NOTIFICATION -->
+
+    <div
+        class="notification"
+        id="notification">
+
+        ✓
+        <span id="notificationText">
+            Success
+        </span>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
